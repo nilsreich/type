@@ -1,0 +1,23 @@
+{
+  "name": "pwa-typ-mdc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "tsc",
+    "bundle": "npx webpack",
+    "serve": "http-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^3.2.1",
+    "webpack": "^4.26.1",
+    "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "pwa-helpers": "^0.9.0",
+    "redux": "^4.0.1"
+  }
+}
