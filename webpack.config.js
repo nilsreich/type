@@ -1,6 +1,4 @@
 const path = require('path');
-const WorkboxPlugin = require('workbox-webpack-plugin');
-
 
 module.exports = {
   mode: 'production',
@@ -12,10 +10,5 @@ module.exports = {
   plugins: [
     // Other plugins...
 
-    new WorkboxPlugin.GenerateSW({
-    clientsClaim: true,
-    skipWaiting: true,
-    include: [/\.html$/, /\.js$/]
-    })
   ]
 };

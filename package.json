@@ -19,6 +19,8 @@
     "workbox-webpack-plugin": "^3.6.3"
   },
   "dependencies": {
-    "pwa-helpers": "^0.9.0"
+    "pwa-helpers": "^0.9.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   }
 }
