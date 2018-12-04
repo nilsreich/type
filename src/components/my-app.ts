@@ -1,33 +1,31 @@
-import {LitElement, html, property} from '@polymer/lit-element';
-import { connect } from 'pwa-helpers/connect-mixin.js';
+import { LitElement, html, property } from '@polymer/lit-element';
+import { printLabel } from './my-math';
 
-// We are lazy loading its reducer.
-import counter from '../reducers/counter.js';
-store.addReducers({
-  counter
-});
 
 class MyApp extends LitElement {
 
-  // Public property API that triggers re-render (synced with attributes)
-  @property()
-  foo = 'foo';
+    // Public property API that triggers re-render (synced with attributes)
+    @property()
+    foo = 'foo';
 
-  @property({type: Number})
-  whales = 5;
+    @property({ type: Number })
+    whales = 5;
 
-  constructor() {
-    super();
-    this.addEventListener('click', async (e) => {
-      this.whales++;
-      await this.updateComplete;
-      this.dispatchEvent(new CustomEvent('whales', {detail: {whales: this.whales}}))
-    });
-  }
+    constructor() {
+        super();
+        let myObj = { a: 10, label: 3 };
+        printLabel(myObj);
+        this.addEventListener('click', async (e) => {
+            e=e;
+            this.whales++;
+            await this.updateComplete;
+            this.dispatchEvent(new CustomEvent('whales', { detail: { whales: this.whales } }))
+        });
+    }
 
-  // Render method should return a `TemplateResult` using the provided lit-html `html` tag function
-  render() {
-    return html`
+    // Render method should return a `TemplateResult` using the provided lit-html `html` tag function
+    render() {
+        return html`
       <style>
         :host {
           display: block;
@@ -40,7 +38,7 @@ class MyApp extends LitElement {
       <div>Wale: ${'🐳'.repeat(this.whales)}</div>
       <slot></slot>
     `;
-  }
+    }
 
 }
 customElements.define('my-app', MyApp);
